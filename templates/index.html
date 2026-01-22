@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Link Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; padding-top: 50px; }
+        .container { max-width: 600px; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn-primary { background-color: #007bff; border: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Link Generator</h2>
+        <p class="text-muted">Upload your CSV and HTML template to generate vendor-specific files.</p>
+        <form action="/process" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label">Upload links.csv</label>
+                <input type="file" name="csv_file" class="form-control" accept=".csv" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Upload Template HTML</label>
+                <input type="file" name="html_file" class="form-control" accept=".html" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Generate & Download Zip</button>
+        </form>
+    </div>
+</body>
+</html>
